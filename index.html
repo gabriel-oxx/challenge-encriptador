@@ -10,11 +10,18 @@
 <body>
 	<h1 id="title">Encriptador</h1>
 	<main id="main">
-		<label for="text">Digite o texto a ser criptografado</label>
-		<textarea name="text" id="text" wrap="hard" cols="30" rows="30"
-			placeholder="Insira apenas letras minúsculas, sem assento e não insira caracteres especiais"></textarea>
-		<button id="encrypt" type="button">Criptografar</button>
-		<button id="decrypt">Descriptografar</button>
+		<section id="info">
+			<label for="input">Digite o texto a ser criptografado</label>
+			<textarea name="text" id="input" wrap="hard" cols="30" rows="30"
+				placeholder="Insira apenas letras minúsculas, sem assento e não insira caracteres especiais"></textarea>
+		</section>
+		<section id="controlers">
+			<button id="encrypt" type="button">Criptografar</button>
+			<button id="decrypt">Descriptografar</button>
+		</section>
+		<section id="content">
+			<p#id="result">Resultado</p>
+		</section>
 	</main>
 	<footer id="footer"></footer>
 </body>
