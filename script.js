@@ -2,6 +2,7 @@ const input = document.querySelector("#input");
 const result = document.querySelector("#result");
 const encrypt = document.querySelector("#encrypt");
 const decrypt = document.querySelector("#decrypt");
+const clear = document.querySelector("#clear");
 const letters = ["a", "e", "i", "o", "u"];
 const correspondence = ["ai", "enter", "imes", "ober", "ufat"];
 let text;
@@ -27,5 +28,10 @@ function decryptText() {
   result.innerText = newText;
 }
 
+function clearText() {
+  result.innerText = "";
+}
+
 encrypt.addEventListener("click", encryptText);
 decrypt.addEventListener("click", decryptText);
+clear.addEventListener("click", clearText);
