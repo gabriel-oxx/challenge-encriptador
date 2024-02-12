@@ -18,6 +18,20 @@
   background-size: contain;
 }
 
+#coppy{
+  background-image: url("folha.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#clear {
+  background-image: url("borracha.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 #paragraph {
   font-size: 16px;
   text-align: center;
