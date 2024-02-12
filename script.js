@@ -43,6 +43,11 @@ function showMessage() {
   }, 5000*10);
 }
 
+function coppyText() {
+  navigator.clipboard.writeText(newText).then(() => {
+    if (newText) showMessage();
+  });
+}
 
 function clearText() {
   paragraph.innerText = "";
