@@ -4,14 +4,14 @@
   display: block;
 }
 
-#image-encrypt {
+#encrypt {
   background-image: url("https://pixabay.com/pt/vectors/cadeado-seguran%c3%a7a-trancar-metal-308589/");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
-#image-decrypt {
+#decrypt {
   background-image: url("https://pixabay.com/pt/vectors/castelo-cadeado-abrir-mente-aberta-378352");
   background-repeat: no-repeat;
   background-position: center;
