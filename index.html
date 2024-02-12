@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
 	<title>Encriptador de texto</title>
 </head>
 
@@ -16,12 +17,16 @@
 				placeholder="Insira apenas letras minúsculas, sem assento e não insira caracteres especiais"></textarea>
 		</section>
 		<section id="controlers">
-			<button id="encrypt" type="button">Criptografar</button>
-			<button id="decrypt">Descriptografar</button>
+			<button id="encrypt" id="image-encrypt" title="Imagem de um cadeado fechado">Criptografar</button>
+			<button id="decrypt" id="image-decrypt">Descriptografar</button>
+			<button id="coppy" type="button">Copiar</button>
 			<button id="clear" type="button">Limpar</button>
 		</section>
 		<section id="content">
-			<p id="result"></p>
+			<div id="container">
+				<img id="image" src="topSecret.jpg">
+			</div>
+			<p id="paragraph"></p>
 		</section>
 	</main>
 	<footer id="footer"></footer>

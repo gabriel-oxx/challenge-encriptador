@@ -1,0 +1,43 @@
+#container {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+#image-encrypt {
+  background-image: url("https://pixabay.com/pt/vectors/cadeado-seguran%c3%a7a-trancar-metal-308589/");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#image-decrypt {
+  background-image: url("https://pixabay.com/pt/vectors/castelo-cadeado-abrir-mente-aberta-378352");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#paragraph {
+  font-size: 16px;
+  text-align: center;
+}
+
+.toast {
+  color: red;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.toast.active {
+  opacity: 1;
+}
