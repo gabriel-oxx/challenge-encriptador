@@ -8,10 +8,12 @@ const letters = ["a", "e", "i", "o", "u"];
 const correspondence = ["ai", "enter", "imes", "ober", "ufat"];
 let text;
 let newText;
+let isDivVisible = true;
+clear.setAttribute("disabled", true);
 
 function checkValidity(t) {
-  const regex = /^[a-z]*$/;
-  return regex.test(t);
+  const regex = /^[a-z ]*$/;
+  return t == "" ? false : regex.test(t);
 }
 
 function showError(input) {
@@ -28,16 +30,18 @@ function showError(input) {
   }, 3000);
 }
 
-function change(t) {
+function change(bool) {
   const div = document.querySelector(".img__top__secret");
 
-  if (!t) {
-    div.style.display = "block";
-    paragraph.style.display = "none";
-  } else {
+  if (bool == true) {
     div.style.display = "none";
     paragraph.style.display = "block";
+    isDivVisible = false;
     encrypt.setAttribute("disabled", true);
+  } else {
+    div.style.display = "block";
+    paragraph.style.display = "none";
+    isDivVisible = true;
   }
 }
 
@@ -51,8 +55,9 @@ function encryptText() {
       const index = letters.indexOf(param);
       return correspondence[index];
     });
-    change(newText);
     paragraph.innerText = newText;
+    change(isDivVisible);
+    clear.removeAttribute("disabled");
   } else {
     showError(input);
   }
@@ -67,10 +72,11 @@ function decryptText() {
   paragraph.innerText = newText;
 }
 
-function showMessage() {
+function showMessage(m) {
   const content = document.querySelector("#content");
   const p = document.createElement("p");
-  p.innerText = "O texto foi copiado da área de transferência";
+  p.innerText = m;
+  p.setAttribute("role", "alert");
   p.classList.add("toast");
   p.classList.add("active");
   content.appendChild(p);
@@ -82,20 +88,24 @@ function showMessage() {
 }
 
 function coppyText() {
+  let messageSuccess = "O texto foi copiado para área de transferência";
+  let messageError = "Não há nada para copiar";
   navigator.clipboard.writeText(newText).then(() => {
-    if (newText) showMessage();
+    if (newText) showMessage(messageSuccess);
+    else showMessage(messageError);
   });
 }
 
-function clearText() {
-  change(newText);
+function reset() {
+  change(isDivVisible);
   text = undefined;
   newText = undefined;
   paragraph.innerText = "";
   encrypt.removeAttribute("disabled");
+  clear.setAttribute("disabled", true);
 }
 
 encrypt.addEventListener("click", encryptText);
 decrypt.addEventListener("click", decryptText);
 copy.addEventListener("click", coppyText);
-clear.addEventListener("click", clearText);
+clear.addEventListener("click", reset);
