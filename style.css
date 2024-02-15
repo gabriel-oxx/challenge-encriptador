@@ -70,10 +70,6 @@
   justify-content: center;
 }
 
-#paragraph {
-  opacity: 0;
-}
-
 .paragraph {
   font-family: "Playfair Display", sans-serif;
   font-size: 1.5rem;
