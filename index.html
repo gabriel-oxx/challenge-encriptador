@@ -12,15 +12,61 @@
 	<h1 class="title">Encriptador</h1>
 	<main id="main">
 		<section class="info">
-		<label role="alert" class="text__style" for="input">Digite o texto a ser criptografado</label>
+			<details>
+				<summary>
+					<h2 class="title">O que é criptografia?</h2>
+				</summary>
+				<p class="paragraph">Você caiu aqui de para quedas e nem sabe o que é criptografia, ou até tem alguma noção mas
+					tem
+					curiosidade de saber mais? Então continue nestas linhas...</p>
+				<p class="paragraph">
+					Criptografia é uma forma de proteger informações que são enviadas ou armazenadas, para que somente as pessoas
+					que têm autorização possam acessá-las. Imagine que você quer mandar uma carta para um amigo, mas não quer que
+					ninguém mais possa ler o que você escreveu. Você poderia usar um código secreto para transformar a sua
+					mensagem em algo que só você e o seu amigo entendem. Por exemplo, você poderia trocar cada letra do alfabeto
+					por outra letra, seguindo uma regra que só vocês dois sabem. Assim, a palavra “amigo” poderia virar “bmlhp”, e
+					a palavra “carta” poderia virar “dbusb”. Essa é uma forma simples de criptografia, que usa uma chave para
+					codificar e decodificar a mensagem. A chave é o segredo que você e o seu amigo compartilham para saber como
+					trocar as letras.
+				</p>
+				<p class="paragraph">
+					A criptografia existe desde os tempos antigos. Os egípcios, os gregos, os romanos e outros
+					povos usavam diferentes formas de criptografia para esconder mensagens importantes, principalmente para fins
+					militares ou políticos. Por exemplo, o imperador romano Júlio César usava um método trocando cada letra por
+					outra que ficava três posições à frente no alfabeto. Assim, a letra A
+					virava D, a letra B virava E, e assim por diante. Esse método ficou conhecido como “Cifra de César”.
+				</p>
+				<p class="paragraph">
+					Ao longo da história, a criptografia foi ficando cada vez mais complexa e sofisticada, usando máquinas,
+					matemática e computadores para criar códigos mais difíceis de serem quebrados. Um exemplo famoso é a máquina
+					“Enigma”, que foi usada pelos alemães na Segunda Guerra Mundial para enviar mensagens secretas. A máquina
+					tinha vários rotores que mudavam a cada letra digitada, criando uma combinação enorme de possibilidades. Os
+					aliados conseguiram decifrar as mensagens da Enigma com a ajuda de matemáticos e de uma máquina chamada
+					“Bomba”, que testava várias chaves possíveis até encontrar a correta.
+				</p>
+				<p class="paragraph">
+					Hoje em dia, a criptografia é usada para proteger as comunicações na internet, como e-mails, mensagens,
+					transações bancárias, etc. A criptografia usa algoritmos, que são regras matemáticas, para transformar os
+					dados em códigos. Existem dois tipos principais de criptografia: a simétrica e a assimétrica. A criptografia
+					simétrica usa a mesma chave para codificar e decodificar a mensagem, como no exemplo da carta. A criptografia
+					assimétrica usa duas chaves diferentes: uma pública, que pode ser compartilhada com qualquer pessoa, e uma
+					privada, que deve ser mantida em segredo. A chave pública serve para codificar a mensagem, e a chave privada
+					serve para decodificar. Assim, se alguém quiser mandar uma mensagem para você, ele pode usar a sua chave
+					pública para codificar, e só você pode decodificar com a sua chave privada.
+				</p>
+			</details>
+			<label role="alert" class="text__style" for="input">Digite o texto a ser criptografado</label>
 			<textarea class="text__area" name="text" id="input" wrap="hard" cols="30" rows="30"
 				placeholder="Insira apenas letras minúsculas, sem acento e não insira caracteres especiais"></textarea>
 		</section>
 		<section class="buttons">
-			<button class="buttons__style" id="encrypt"> <img src="assets/icons8-lock-24.png" alt="Ícone de um cadeado fechado"/> Criptografar </button>
-			<button class="buttons__style" id="decrypt"> <img src="assets/icons8-open-lock-24.png" alt="Ícone de um cadeado aberto"/> Descriptografar</button>
+			<button class="buttons__style" id="encrypt"> <img src="assets/icons8-lock-24.png"
+					alt="Ícone de um cadeado fechado" /> Criptografar </button>
+			<button class="buttons__style" id="decrypt"> <img src="assets/icons8-open-lock-24.png"
+					alt="Ícone de um cadeado aberto" /> Descriptografar</button>
 			<button class="buttons__style" id="copy"> <img src="assets/icons8-copy-25.png" /> Copiar</button>
-			<button class="buttons__style" id="clear"> <img src="assets/icons8-eraser-24.png" alt="Ícone de uma borracha"/> Começar de novo</button>
+			<button class="buttons__style" id="clear"> <img src="assets/icons8-eraser-24.png" alt="Ícone de uma borracha" />
+				Começar de novo</button>
 		</section>
 		<section id="content">
 			<div class="img__top__secret">
@@ -30,7 +76,19 @@
 			<p class="paragraph" id="paragraph"></p>
 		</section>
 	</main>
-	<footer class="footer" id="footer">Desenvolvido por Gabriel Costa</footer>
+	<footer class="footer" id="footer">
+		<p class="paragraph">Olá! Gabriel aqui. Sou um desenvolvedor, provavelmente menos que junior (por enquanto), mas vou
+			chegar lá.</p>
+		<p class="paragraph">Gostou do que viu aqui? Caso queira, você pode me encontrar pelos meios abaixo. Será um prazer
+			trocar uma ideia sobre o que podemos construir juntos!</p>
+		<div class="links">
+			<a href="https://www.linkedin.com/in/gabriel-costa-dev/" target="_blank">LinkedIn (abre em uma nova aba)</a>
+			<a href="https://github.com/gabriel-oxx" target="_blank">GitHub (abre em uma nova aba)</a>
+		</div>
+		<p class="paragraph">Este projeto encontra-se sob a <a href="https://opensource.org/license/mit/"
+				target="_blank">Licença MIT (abre
+				em uma nova aba)</a></p>
+	</footer>
 	<script src="script.js"></script>
 </body>
 

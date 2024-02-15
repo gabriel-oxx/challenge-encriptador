@@ -5,9 +5,9 @@
 
 .title {
   background-color: darkslategray;
-  color: white; /* Define a cor do texto do título */
-  padding: 5%; /* Define o espaçamento interno do título */
-  text-align: center; /* Centraliza o texto do título */
+  color: white;
+  padding: 5%;
+  text-align: center;
   font-size: 2, 25rem;
   font-family: "Sixtyfour", sans-serif;
 }
@@ -80,6 +80,28 @@
   padding: 10px;
   border: 2px solid lightgray;
   background-color: white;
+}
+
+.links {
+  display: flex;
+  font-family: “Montserrat”, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: lightgray;
 }
 
 .footer {
