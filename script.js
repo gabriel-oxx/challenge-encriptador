@@ -9,29 +9,53 @@ const correspondence = ["ai", "enter", "imes", "ober", "ufat"];
 let text;
 let newText;
 
-function change() {
+function checkValidity(t) {
+  const regex = /^[a-z]*$/;
+  return regex.test(t);
+}
+
+function showError(input) {
+  const label = document.querySelector("label[for='input']");
+  const originalLabel = label.textContent;
+  label.textContent = "Opa! Você precisa digitar um texto válido!";
+  input.style.color = "red";
+  input.style.border = "1px solid red";
+
+  setTimeout(() => {
+    label.textContent = originalLabel;
+    input.style.color = "";
+    input.style.border = "";
+  }, 3000);
+}
+
+function change(t) {
   const div = document.querySelector(".img__top__secret");
 
-  if (div.style.display == "none") {
+  if (!t) {
     div.style.display = "block";
     paragraph.style.display = "none";
-  }
-  else {
+  } else {
     div.style.display = "none";
     paragraph.style.display = "block";
+    encrypt.setAttribute("disabled", true);
   }
 }
 
 function encryptText() {
   const regex = new RegExp(letters.join("|"), "g");
   text = input.value;
-  input.value = "";
-  newText = text.replace(regex, (param) => {
-    const index = letters.indexOf(param);
-    return correspondence[index];
-  });
-  change();
-  paragraph.innerText = newText;
+
+  if (checkValidity(text)) {
+    input.value = "";
+    newText = text.replace(regex, (param) => {
+      const index = letters.indexOf(param);
+      return correspondence[index];
+    });
+    change(newText);
+    paragraph.innerText = newText;
+  } else {
+    showError(input);
+  }
 }
 
 function decryptText() {
@@ -54,7 +78,7 @@ function showMessage() {
     p.classList.remove("toast");
     p.classList.remove("active");
     content.removeChild(p);
-  }, 5000 * 10);
+  }, 3000);
 }
 
 function coppyText() {
@@ -64,7 +88,11 @@ function coppyText() {
 }
 
 function clearText() {
+  change(newText);
+  text = undefined;
+  newText = undefined;
   paragraph.innerText = "";
+  encrypt.removeAttribute("disabled");
 }
 
 encrypt.addEventListener("click", encryptText);
