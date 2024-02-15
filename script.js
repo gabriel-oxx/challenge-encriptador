@@ -1,5 +1,5 @@
 const input = document.querySelector("#input");
-const paragraph = document.querySelector("#paragraph")    ;
+const paragraph = document.querySelector("#paragraph");
 const encrypt = document.querySelector("#encrypt");
 const decrypt = document.querySelector("#decrypt");
 const clear = document.querySelector("#clear");
@@ -9,6 +9,19 @@ const correspondence = ["ai", "enter", "imes", "ober", "ufat"];
 let text;
 let newText;
 
+function change() {
+  const div = document.querySelector(".img__top__secret");
+
+  if (div.style.display == "none") {
+    div.style.display = "block";
+    paragraph.style.display = "none";
+  }
+  else {
+    div.style.display = "none";
+    paragraph.style.display = "block";
+  }
+}
+
 function encryptText() {
   const regex = new RegExp(letters.join("|"), "g");
   text = input.value;
@@ -17,6 +30,7 @@ function encryptText() {
     const index = letters.indexOf(param);
     return correspondence[index];
   });
+  change();
   paragraph.innerText = newText;
 }
 
@@ -40,7 +54,7 @@ function showMessage() {
     p.classList.remove("toast");
     p.classList.remove("active");
     content.removeChild(p);
-  }, 5000*10);
+  }, 5000 * 10);
 }
 
 function coppyText() {
