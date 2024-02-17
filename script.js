@@ -65,11 +65,20 @@ function encryptText() {
 
 function decryptText() {
   const regex = new RegExp(correspondence.join("|"), "g");
-  newText = newText.replace(regex, (param) => {
-    const index = correspondence.indexOf(param);
-    return letters[index];
-  });
-  paragraph.innerText = newText;
+  text = input.value;
+
+  if (checkValidity(text)) {
+    input.value = "";
+    newText = text.replace(regex, (param) => {
+      const index = correspondence.indexOf(param);
+      return letters[index];
+    });
+    paragraph.innerText = newText;
+    change(isDivVisible);
+    clear.removeAttribute("disabled");
+  } else {
+    showError(input);
+  }
 }
 
 function showMessage(m) {
